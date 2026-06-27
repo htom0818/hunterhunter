@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HUNTER×HUNTER 暗黒大陸編 DB</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">HxH</div>
+        <div>
+          <p class="sub">Personal Database</p>
+          <h1>暗黒大陸編 DB</h1>
+        </div>
+      </div>
+      <div class="stats" id="stats"></div>
+    </header>
+    <section class="searchPanel">
+      <input id="searchInput" class="search" placeholder="キャラ・用語・話数で検索 例：ビヨンド / 5大厄災 / 342" />
+      <div class="tabs">
+        <button class="tab active" data-view="episodes">話別</button>
+        <button class="tab" data-view="terms">用語・人物</button>
+        <button class="tab" data-view="lines">ストーリーライン</button>
+      </div>
+    </section>
+    <main class="layout">
+      <aside class="listWrap">
+        <div id="list" class="list"></div>
+      </aside>
+      <section class="content">
+        <div id="detail" class="detail"></div>
+      </section>
+    </main>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
