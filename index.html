@@ -11,45 +11,92 @@
     <source src="assets/video/opening.mp4" type="video/mp4">
   </video>
   <div class="bg-overlay"></div>
-  <section id="intro" class="intro-screen">
+
+  <section id="intro" class="intro-screen screen">
     <div class="intro-inner">
-      <div class="eyebrow type-target" data-text="STORY GUIDE"></div>
-      <h1 class="title type-target" data-text="HUNTER×HUNTER"></h1>
-      <div class="subtitle type-target" data-text="暗黒大陸編"></div>
+      <div class="intro-kicker type-target" data-text="STORY GUIDE"></div>
+      <h1 class="intro-title type-target" data-text="HUNTER×HUNTER"></h1>
+      <div class="intro-subtitle type-target" data-text="暗黒大陸編"></div>
       <button id="enterBtn" class="enter-btn">ENTER</button>
     </div>
   </section>
+
   <main id="app" class="app hidden">
-    <header class="app-header">
-      <div class="header-kicker">STORY GUIDE</div>
-      <h1>暗黒大陸編</h1>
-    </header>
-    <section class="search-panel">
-      <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="検索窓"></label>
-      <nav class="menu-grid">
-        <button data-view="episodes" class="menu-btn active">話数<small>EPISODES</small></button>
-        <button data-view="characters" class="menu-btn">キャラクター<small>CHARACTERS</small></button>
-        <button data-view="organizations" class="menu-btn">組織<small>ORGS</small></button>
-        <button data-view="terms" class="menu-btn">用語<small>TERMS</small></button>
-        <button data-view="storylines" class="menu-btn">ストーリーライン<small>STORYLINE</small></button>
-        <button data-view="books" class="menu-btn">単行本<small>BOOKS</small></button>
-      </nav>
+    <section id="homeScreen" class="screen active-screen">
+      <header class="home-header">
+        <div class="home-kicker">STORY GUIDE</div>
+        <h1>暗黒大陸編</h1>
+      </header>
+      <section class="search-panel">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="検索窓">
+        </label>
+        <nav class="menu-grid">
+          <button data-open-list="episodes" class="menu-btn">話数<small>EPISODES</small></button>
+          <button data-open-list="characters" class="menu-btn">キャラクター<small>CHARACTERS</small></button>
+          <button data-open-list="organizations" class="menu-btn">組織<small>ORGS</small></button>
+          <button data-open-list="terms" class="menu-btn">用語<small>TERMS</small></button>
+          <button data-open-list="storylines" class="menu-btn">ストーリーライン<small>STORYLINE</small></button>
+          <button data-open-list="books" class="menu-btn">単行本<small>BOOKS</small></button>
+        </nav>
+      </section>
+
+      <section class="home-section">
+        <div class="section-title">◆ CHARACTER</div>
+        <div class="marquee-wrap">
+          <div id="characterMarquee" class="character-marquee"></div>
+        </div>
+      </section>
+
+      <section class="home-section">
+        <div class="section-title">◆ BOOKS</div>
+        <div class="book-wrap">
+          <div id="bookMarquee" class="book-marquee"></div>
+        </div>
+      </section>
+
+      <section id="searchResults" class="content-panel hidden"></section>
+
+      <section class="latest-card">
+        <div>
+          <div class="latest-label">LATEST UPDATE</div>
+          <div class="latest-sub">最新の更新情報</div>
+        </div>
+        <div class="latest-main">
+          <div class="latest-thumb" id="latestThumb"></div>
+          <div>
+            <strong id="latestTitle">No345　著者</strong>
+            <span id="latestMeta">更新済み</span>
+          </div>
+        </div>
+        <button class="round-btn" data-open-list="episodes">☰</button>
+      </section>
     </section>
-    <section class="home-section">
-      <div class="section-title"><span>◆ CHARACTER</span><small>自動スクロール中</small></div>
-      <div class="marquee-wrap"><div id="characterMarquee" class="character-marquee"></div></div>
+
+    <section id="listScreen" class="screen panel-screen hidden">
+      <header class="page-header">
+        <button class="back-btn" data-back>←</button>
+        <div>
+          <div class="page-kicker">DATABASE</div>
+          <h2 id="listTitle">一覧</h2>
+        </div>
+      </header>
+      <div id="listContent" class="list-grid"></div>
     </section>
-    <section class="home-section">
-      <div class="section-title"><span>◆ BOOKS</span><small>自動スクロール中</small></div>
-      <div class="book-wrap"><div id="bookMarquee" class="book-marquee"></div></div>
-    </section>
-    <section id="content" class="content-panel"></section>
-    <section class="latest-card">
-      <div><div class="latest-label">LATEST UPDATE</div><div class="latest-sub">最新の更新情報</div></div>
-      <div class="latest-main"><div class="latest-thumb" id="latestThumb"></div><div><strong id="latestTitle">No345　著者</strong><span id="latestMeta">更新済み</span></div></div>
-      <button class="round-btn" data-view="episodes">☰</button>
+
+    <section id="detailScreen" class="screen panel-screen hidden">
+      <header class="page-header">
+        <button class="back-btn" data-back>←</button>
+        <div>
+          <div class="page-kicker" id="detailKicker">DETAIL</div>
+          <h2 id="detailTitle">詳細</h2>
+        </div>
+      </header>
+      <div id="detailContent" class="detail-card"></div>
     </section>
   </main>
+
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
