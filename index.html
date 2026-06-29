@@ -1,1 +1,110 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>HUNTER×HUNTER 暗黒大陸編 STORY GUIDE</title><link rel="stylesheet" href="styles.css?v=07"></head><body><video class="bg-video" autoplay muted loop playsinline><source src="assets/video/opening.mp4" type="video/mp4"></video><div class="bg-overlay"></div><section id="intro" class="intro-screen"><div class="intro-inner"><div class="intro-kicker type-target" data-text="STORY GUIDE"></div><h1 class="intro-title type-target" data-text="HUNTER×HUNTER"></h1><div class="intro-subtitle type-target" data-text="暗黒大陸編"></div><button id="enterBtn" class="enter-btn">ENTER</button></div></section><main id="app" class="app hidden"><section id="homeScreen" class="screen"><header class="home-header"><div class="home-kicker">STORY GUIDE</div><h1>暗黒大陸編</h1></header><section class="search-panel"><div class="search-row"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" autocomplete="off" placeholder=""></label><button id="searchBtn" class="search-btn">検索</button></div><div id="suggestions" class="suggestions hidden"></div><nav class="menu-grid"><button data-open-list="episodes" class="menu-btn">話数<small>EPISODES</small></button><button data-open-list="characters" class="menu-btn">キャラクター<small>CHARACTERS</small></button><button data-open-list="organizations" class="menu-btn">組織<small>ORGS</small></button><button data-open-list="terms" class="menu-btn">用語<small>TERMS</small></button><button data-open-list="storylines" class="menu-btn">ストーリーライン<small>STORYLINE</small></button><button data-open-list="books" class="menu-btn">単行本<small>BOOKS</small></button></nav></section><section class="home-section character-section"><div class="section-title">◆ CHARACTER</div><div class="marquee-wrap"><div id="characterMarquee" class="character-marquee"></div></div></section><section class="home-section books-section"><div class="section-title">◆ BOOKS</div><div class="book-wrap"><div id="bookMarquee" class="book-marquee"></div></div></section><section class="latest-card"><div class="latest-label">LATEST UPDATE</div><div class="latest-main"><strong id="latestTitle">No348　覚悟</strong><span id="latestMeta">更新済み</span></div></section></section><section id="listScreen" class="screen hidden"><header class="page-header"><button class="back-btn" data-back>←</button><div><div class="page-kicker">DATABASE</div><h2 id="listTitle">一覧</h2></div></header><div id="listContent" class="list-grid"></div></section><section id="detailScreen" class="screen hidden"><header class="page-header"><button class="back-btn" data-back>←</button><div><div class="page-kicker" id="detailKicker">DETAIL</div><h2 id="detailTitle">詳細</h2></div></header><div id="detailContent" class="detail-card"></div></section><section id="searchScreen" class="screen hidden"><header class="page-header"><button class="back-btn" data-back>←</button><div><div class="page-kicker">SEARCH</div><h2 id="searchTitle">検索結果</h2></div></header><div id="searchContent" class="list-stack"></div></section></main><script src="data.js?v=07"></script><script src="app.js?v=07"></script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HUNTER×HUNTER 暗黒大陸編 STORY GUIDE</title>
+  <link rel="stylesheet" href="styles.css?v=071">
+</head>
+<body>
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="assets/video/opening.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+
+  <section id="intro" class="intro-screen">
+    <div class="intro-inner">
+      <div class="intro-kicker type-target" data-text="STORY GUIDE">STORY GUIDE</div>
+      <h1 class="intro-title type-target" data-text="HUNTER×HUNTER">HUNTER×HUNTER</h1>
+      <div class="intro-subtitle type-target" data-text="暗黒大陸編">暗黒大陸編</div>
+      <button id="enterBtn" class="enter-btn show">ENTER</button>
+    </div>
+  </section>
+
+  <main id="app" class="app hidden">
+    <section id="homeScreen" class="screen">
+      <header class="home-header">
+        <div class="home-kicker">STORY GUIDE</div>
+        <h1>暗黒大陸編</h1>
+      </header>
+
+      <section class="search-panel">
+        <div class="search-row">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="">
+          </label>
+          <button id="searchBtn" class="search-btn">検索</button>
+        </div>
+        <div id="suggestions" class="suggestions hidden"></div>
+        <nav class="menu-grid">
+          <button data-open-list="episodes" class="menu-btn">話数<small>EPISODES</small></button>
+          <button data-open-list="characters" class="menu-btn">キャラクター<small>CHARACTERS</small></button>
+          <button data-open-list="organizations" class="menu-btn">組織<small>ORGS</small></button>
+          <button data-open-list="terms" class="menu-btn">用語<small>TERMS</small></button>
+          <button data-open-list="storylines" class="menu-btn">ストーリーライン<small>STORYLINE</small></button>
+          <button data-open-list="books" class="menu-btn">単行本<small>BOOKS</small></button>
+        </nav>
+      </section>
+
+      <section class="home-section character-section">
+        <div class="section-title">◆ CHARACTER</div>
+        <div class="marquee-wrap">
+          <div id="characterMarquee" class="character-marquee"></div>
+        </div>
+      </section>
+
+      <section class="home-section books-section">
+        <div class="section-title">◆ BOOKS</div>
+        <div class="book-wrap">
+          <div id="bookMarquee" class="book-marquee"></div>
+        </div>
+      </section>
+
+      <section class="latest-card">
+        <div class="latest-label">LATEST UPDATE</div>
+        <div class="latest-main">
+          <strong id="latestTitle">No348　覚悟</strong>
+          <span id="latestMeta">更新済み</span>
+        </div>
+      </section>
+    </section>
+
+    <section id="listScreen" class="screen hidden">
+      <header class="page-header">
+        <button class="back-btn" data-back>←</button>
+        <div>
+          <div class="page-kicker">DATABASE</div>
+          <h2 id="listTitle">一覧</h2>
+        </div>
+      </header>
+      <div id="listContent" class="list-grid"></div>
+    </section>
+
+    <section id="detailScreen" class="screen hidden">
+      <header class="page-header">
+        <button class="back-btn" data-back>←</button>
+        <div>
+          <div class="page-kicker" id="detailKicker">DETAIL</div>
+          <h2 id="detailTitle">詳細</h2>
+        </div>
+      </header>
+      <div id="detailContent" class="detail-card"></div>
+    </section>
+
+    <section id="searchScreen" class="screen hidden">
+      <header class="page-header">
+        <button class="back-btn" data-back>←</button>
+        <div>
+          <div class="page-kicker">SEARCH</div>
+          <h2 id="searchTitle">検索結果</h2>
+        </div>
+      </header>
+      <div id="searchContent" class="list-stack"></div>
+    </section>
+  </main>
+
+  <script src="data.js?v=071"></script>
+  <script src="app.js?v=071"></script>
+</body>
+</html>
